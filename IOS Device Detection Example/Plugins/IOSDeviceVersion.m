@@ -15,10 +15,10 @@
     CDVPluginResult* pluginResult;
     if ([AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo].count) {
         // If the device has a camera, its greater than iPad 1
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"iPad2"];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"hasCamera"];
     } else {
         // Its probably an iPad 2
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"iPad1"];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"noCamera"];
     }
     // Check for retina
     if ([UIScreen instancesRespondToSelector:@selector(scale)]) 
@@ -27,7 +27,7 @@
         if (scale > 1.0) 
         {
             // It has retina, so its an iPad 3 or greater
-            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"iPad3"];
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"retina"];
         }
     }
     [self writeJavascript: [pluginResult toSuccessCallbackString:callbackId]];

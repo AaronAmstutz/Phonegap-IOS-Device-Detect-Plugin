@@ -6,16 +6,3 @@ var IOSDeviceVersion = {
                     [resultType]);
     }
 };
-
-// function callNativePlugin( returnSuccess ) {
-//   console.log(DeviceVersion);
-//     DeviceVersion.specs( EnabledHandler, ErrorHandler, returnSuccess );
-// }
-
-// function EnabledHandler (result) {
-//    alert("SUCCESS: \r\n"+result );
-// }
-
-// function ErrorHandler (error) {
-//    alert("ERROR: \r\n"+error );
-// }

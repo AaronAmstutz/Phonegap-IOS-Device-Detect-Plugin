@@ -81,11 +81,12 @@
 		IOSDeviceVersion.device(enabled, null);
     function enabled(result) {
     	var showDevice = document.getElementById("device");
-    	showDevice.textContent = result;
-      if (result === 'iPad1') {
-     		// Do something?
-      } else if (result === 'iPad2') {
-      	// Or do something else.
+      if (result === 'noCamera') {
+     		showDevice.textContent = 'iPad first gen, it has no camera.';
+      } else if (result === 'hasCamera') {
+      	showDevice.textContent = 'iPad second gen, it has a camera but no retina display.';
+      } else if (result === 'retina') {
+      	showDevice.textContent = 'iPad third gen+ or iPhone 4+, it has a retina display.';
       }
     }
 	}
